@@ -56,13 +56,13 @@ export function maxAndMin(numbers) {
  */
 export function countArray(array) {
     let res = Object();
-    array.forEach(function(item){
-        if(!res[item]){
-            res.item = 1;
+    for(var i = 0; i< array.length; i ++){
+        if(!res[array[i]]){
+            res.array[i] = 1;
         }
         else{
-            res.item += 1;
-        }
-    });
+            res.array[i] += 1;
+        };
+    }
     return res;
 }

@@ -56,14 +56,13 @@ export function maxAndMin(numbers) {
  */
 export function countArray(array) {
     let map = new Map();
-    for(var i = 0; i < array.length; i++){
-        if (map.has(array[i])){
-            map[array[i]] += 1;
+    array.forEach(function(item, index) {
+        if(map.has(item)){
+            map.set(item,map[item]+1);
         }
         else{
-            map.set(array[i],1);
+            map.set(item,1);
         }
-    }
+      })
     return map;
-
 }

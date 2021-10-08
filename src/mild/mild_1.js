@@ -55,15 +55,5 @@ export function maxAndMin(numbers) {
  *
  */
 export function countArray(array) {
-    let map = new Map();
-    array.forEach(function(item) {
-        if(map.has(item)){
-            console.log(item);
-            map[item] += 1;
-        }
-        else{
-            map.set(item,1);
-        }
-      })
-    return map;
+    return _.countBy(array);
 }

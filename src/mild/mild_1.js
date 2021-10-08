@@ -55,5 +55,6 @@ export function maxAndMin(numbers) {
  *
  */
 export function countArray(array) {
+    let _ = [];
     return _.countBy(array);
 }

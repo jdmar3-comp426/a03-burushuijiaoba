@@ -58,10 +58,10 @@ export function countArray(array) {
     let res = Object();
     for(var i = 0; i< array.length; i ++){
         if(!res[array[i]]){
-            res.array[i] = 1;
+            res[array[i]] = 1;
         }
         else{
-            res.array[i] += 1;
+            res[array[i]] += 1;
         };
     }
     return res;

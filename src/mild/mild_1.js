@@ -58,7 +58,7 @@ export function countArray(array) {
     let map = new Map();
     array.forEach(function(item) {
         if(map.has(item)){
-            print(item);
+            console.log(item);
             map[item] += 1;
         }
         else{

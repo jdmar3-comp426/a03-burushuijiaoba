@@ -57,6 +57,18 @@ export function getMedian(array) {
  }
  */
 export function getStatistics(array) {
-
+    let res = Object();
+    array.sort(function(a,b){
+        return a-b;
+    });
+    res[`length`] = array.length;
+    res[`sum`] = getSum(array);
+    res[`mean`] = getSum(array)/array.length;
+    res[`median`] = getMedian(array);
+    res[`min`] = array[0];
+    res[`max`] = array[-1];
+    res[`variance`] = Math.variance(array);
+    res[`standard_deviation`] = Math.standard_deviation(array);
+    return res;
 }
 

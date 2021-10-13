@@ -1,3 +1,2 @@
-import {sumToString} from "src/mild/mild_1.js";
-
-console.log(sumToString(3,4));
+import {identifyVariable} from "src/mild/mild_2.js";
+console.log(identifyVariable(4));

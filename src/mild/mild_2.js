@@ -10,7 +10,6 @@ export function identifyVariable(variable) {
    res[`type`] = typeof(variable);
    res[`value`] = variable;
    return res;
-
 }
 
 

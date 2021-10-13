@@ -34,7 +34,7 @@ export function identifyArray(array) {
       temp[`value`] = array[i];
       res.push(temp);
    }
-   return res.replace(/(\r\n|\n|\r)/gm, "");;
+   return res.replace(/(\r\n|\n|\r)/gm, "");
 
 }
 

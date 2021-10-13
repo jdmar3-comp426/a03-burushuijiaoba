@@ -61,14 +61,19 @@ export function getStatistics(array) {
     array.sort(function(a,b){
         return a-b;
     });
+    let mean = Math.mean(array);
+    let variance = 0
+    array.forEach(function(value){
+        variance += Math.sqrt(value-mean)/array.length;
+    })
     res[`length`] = array.length;
     res[`sum`] = getSum(array);
-    res[`mean`] = getSum(array)/array.length;
+    res[`mean`] = mean;
     res[`median`] = getMedian(array);
     res[`min`] = array[0];
     res[`max`] = array[-1];
-    res[`variance`] = Math.variance(...array);
-    res[`standard_deviation`] = Math.standard_deviation(...array);
+    res[`variance`] = variance;
+    res[`standard_deviation`] = Math.sqrt(variance);
     return res;
 }
 

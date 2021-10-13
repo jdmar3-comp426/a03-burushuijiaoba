@@ -6,9 +6,9 @@
  * returns: { type: 'number', value: 4 }
  */
 export function identifyVariable(variable) {
-   let res = Object();
-   res[`type`] = typeof(variable);
-   res[`value`] = variable;
+   let res = {type:typeof(variable),value:variable};
+   // res[`type`] = typeof(variable);
+   // res[`value`] = variable;
    return res;
 }
 

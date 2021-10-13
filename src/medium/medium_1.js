@@ -57,7 +57,7 @@ export function getMedian(array) {
  }
  */
 export function getStatistics(array) {
-    let res = Object();
+    let res = new Object();
     array.sort(function(a,b){
         return a-b;
     });

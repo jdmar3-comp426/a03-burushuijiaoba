@@ -64,7 +64,7 @@ export function getStatistics(array) {
     const mean = getSum(array)/array.length;
     var variance = 0;
     array.forEach(function(value){
-        variance += (value-mean)/array.length;
+        variance += (value-mean)**2/array.length;
     });
     res[`length`] = array.length;
     res[`sum`] = getSum(array);

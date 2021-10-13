@@ -10,7 +10,7 @@ import {variance} from "./data/stats_helpers.js";
 export function getSum(array) {
     var total = 0;
     for(var i in array){
-        total += i;
+        total += int(i);
     }
     return total;
 }
@@ -57,6 +57,6 @@ export function getMedian(array) {
  }
  */
 export function getStatistics(array) {
-    
+
 }
 

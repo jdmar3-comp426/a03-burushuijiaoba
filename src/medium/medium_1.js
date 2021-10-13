@@ -61,7 +61,7 @@ export function getStatistics(array) {
     array.sort(function(a,b){
         return a-b;
     });
-    let mean = Math.mean(array);
+    let mean = getSum(array)/array.length;
     let variance = 0
     array.forEach(function(value){
         variance += Math.sqrt(value-mean)/array.length;

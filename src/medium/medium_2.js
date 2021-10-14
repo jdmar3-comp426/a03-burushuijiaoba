@@ -22,13 +22,13 @@ see under the methods section
 export const allCarStats = {
     avgMpg: {
     city : mpg_data.reduce(function(pre,cur){
-        pre.city_mpg + cur.city_mpg;
+        return pre.city_mpg + cur.city_mpg;
     }), 
     highway : mpg_data.reduce(function(pre,cur){
-        pre.highway_mpg + cur.highway_mpg;
+        return pre.highway_mpg + cur.highway_mpg;
     })},
     allYearStats: getStatistics(mpg_data.map(item => item.year)),
-    ratioHybrids: getSum(mpg_data.map(item => {if(item.hybrid){1} 0}))/mpg_data.length
+    ratioHybrids: getSum(mpg_data.map(item => {if(item.hybrid){return 1;} return 0;}))/mpg_data.length
 };
 
 

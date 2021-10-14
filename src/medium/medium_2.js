@@ -23,12 +23,12 @@ let init = 0;
 
 export const allCarStats = {
     avgMpg: {
-    city : mpg_data.reduce(function(pre,cur){
-        return pre.city_mpg + cur.city_mpg;
-    },init), 
-    highway : mpg_data.reduce(function(pre,cur){
-        return pre.highway_mpg + cur.highway_mpg;
-    },init)},
+        city : mpg_data.reduce(function(pre,cur){
+            return pre + cur.city_mpg;
+        },0)/mpg_data.length,
+        highway : mpg_data.reduce(function(pre,cur){
+            return pre + cur.highway_mpg;
+        },0)/mpg_data.length},
     allYearStats: getStatistics(mpg_data.map(item => item.year)),
     ratioHybrids: getSum(mpg_data.map(item => {if(item.hybrid){return 1;} return 0;}))/mpg_data.length
 };

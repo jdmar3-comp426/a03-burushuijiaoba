@@ -103,9 +103,6 @@ export const moreStats = {
             if(pre[cur.make]["hybrid"].indexOf(cur.id) == -1){
                 pre[cur.make]["hybrid"].push(cur.id);
             }
-            else{
-                continue;
-            }
         }
         return pre;
     },[]).sort(a,b => a.hybrid.length - b.hybrid.length),

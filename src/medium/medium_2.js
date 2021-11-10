@@ -105,6 +105,6 @@ export const moreStats = {
             }
         }
         return pre;
-    },[]).sort(a,b => a.hybrid.length - b.hybrid.length),
+    },[]).sort((a,b) => a.hybrid.length - b.hybrid.length),
     avgMpgByYearAndHybrid: undefined
 };

@@ -19,18 +19,18 @@ see under the methods section
  *
  * @param {allCarStats.ratioHybrids} ratio of cars that are hybrids
  */
-let init = 0;
 
 export const allCarStats = {
-    avgMpg: {city : mpg_data.reduce(function(pre,cur){
+    avgMpg: {
+        city : mpg_data.reduce(function(pre,cur){
             return pre + cur.city_mpg;
         },0)/mpg_data.length,
         highway : mpg_data.reduce(function(pre,cur){
             return pre + cur.highway_mpg;
         },0)/mpg_data.length},
     allYearStats: getStatistics(mpg_data.map(item => item.year)),
-    ratioHybrids: getSum(mpg_data.map(item => {if(item.hybrid){return 1;} return 0;}))/mpg_data.length};
-
+    ratioHybrids: getSum(mpg_data.map(item => {if(item.hybrid){return 1;} return 0;}))/mpg_data.length
+};
 
 /**
  * HINT: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reduce
@@ -89,6 +89,20 @@ export const allCarStats = {
  *
  * }
  */
+function isHybrid(value){
+    return value.hybrid;
+}
+
+const mapForMH = new Map();
+mpg_data.filter(isHybrid).forEach(function(value){
+    if(!(value.make in mapForMH )){
+        mapForMH.set(value.make,value.id);
+    }
+    else{
+        mapForMH.set(value.make,mapForMH.get(value.make)+value.id);
+    }
+})
+
 export const moreStats = {
     makerHybrids: undefined,
     avgMpgByYearAndHybrid: undefined

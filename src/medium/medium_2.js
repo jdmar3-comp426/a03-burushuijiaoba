@@ -93,7 +93,7 @@ function isHybrid(value){
     return value.hybrid;
 }
 
-let filtered_array = array.filter(isHybrid);
+let filtered_array = mpg_data.filter(isHybrid);
 console.log(filtered_array);
 export const moreStats = {
     makerHybrids: undefined,

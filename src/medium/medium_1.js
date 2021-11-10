@@ -72,8 +72,8 @@ export function getStatistics(array) {
     res[`median`] = getMedian(array);
     res[`min`] = array[0];
     res[`max`] = array[array.length-1];
-    res[`variance`] = variance(array);
-    res[`standard_deviation`] = Math.sqrt(variance(array));
+    res[`variance`] = variance(array,mean);
+    res[`standard_deviation`] = Math.sqrt(variance(array,mean));
     return res;
 }
 

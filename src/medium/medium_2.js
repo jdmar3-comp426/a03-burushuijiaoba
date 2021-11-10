@@ -89,13 +89,25 @@ export const allCarStats = {
  *
  * }
  */
-function isHybrid(value){
-    return value.hybrid;
-}
 
-let filtered_array = mpg_data.filter(isHybrid);
-console.log(filtered_array);
+
+
+
 export const moreStats = {
-    makerHybrids: undefined,
+    makerHybrids: mpg_data.filter(car => car.hybrid).reduce(function(pre,cur){
+        if(pre.indexOf(cur) == -1){
+            let new_record = {"make":cur.make,"hybrid":[cur.id]};
+            pre.push(new_record);
+        }
+        else{
+            if(pre[cur.make]["hybrid"].indexOf(cur.id) == -1){
+                pre[cur.make]["hybrid"].push(cur.id);
+            }
+            else{
+                continue;
+            }
+        }
+        return pre;
+    },[]).sort(a,b => a.hybrid.length - b.hybrid.length),
     avgMpgByYearAndHybrid: undefined
 };

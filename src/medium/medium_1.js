@@ -62,18 +62,18 @@ export function getStatistics(array) {
         return a-b;
     });
     const mean = getSum(array)/array.length;
-    var variance = 0;
-    array.forEach(function(value){
-        variance += (value-mean)**2/array.length;
-    });
+    // var variance = 0;
+    // array.forEach(function(value){
+    //     variance += (value-mean)**2/array.length;
+    // });
     res[`length`] = array.length;
     res[`sum`] = getSum(array);
     res[`mean`] = mean;
     res[`median`] = getMedian(array);
     res[`min`] = array[0];
     res[`max`] = array[array.length-1];
-    res[`variance`] = variance;
-    res[`standard_deviation`] = Math.sqrt(variance);
+    res[`variance`] = variance(array);
+    res[`standard_deviation`] = Math.sqrt(variance(array));
     return res;
 }
 

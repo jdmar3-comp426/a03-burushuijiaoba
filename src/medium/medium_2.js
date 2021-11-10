@@ -93,16 +93,8 @@ function isHybrid(value){
     return value.hybrid;
 }
 
-const mapForMH = new Map();
-mpg_data.filter(isHybrid).forEach(function(value){
-    if(!(value.make in mapForMH )){
-        mapForMH.set(value.make,value.id);
-    }
-    else{
-        mapForMH.set(value.make,mapForMH.get(value.make)+value.id);
-    }
-})
-
+let filtered_array = array.filter(isHybrid);
+console.log(filtered_array);
 export const moreStats = {
     makerHybrids: undefined,
     avgMpgByYearAndHybrid: undefined

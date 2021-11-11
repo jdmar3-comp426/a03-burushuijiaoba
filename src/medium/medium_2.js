@@ -126,7 +126,7 @@ export const moreStats = {
                 pre[cur.year].notHybrid.highway.push(cur.highway_mpg);
             }
         }
-        if(indx == mpg_data.length){
+        if(indx == mpg_data.length-1){
             for(const [key, value] of Object.entries(pre)){
                 value.hybrid.city = getSum(value.hybrid.city)/value.hybrid.city.length;
                 value.hybrid.highway = getSum(value.hybrid.highway)/value.hybrid.highway.length;

@@ -23,9 +23,9 @@
 // };
 
 export function repeat(fn,n,params){
-    let res = []
-    for(var i=0;i<n,i++;){
-        res.push(fn(...params));
+    let res = [];
+    for(var i=0;i<n;i++ ){
+        res.push(fn(params));
     }
     return res;
 }

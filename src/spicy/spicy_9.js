@@ -23,9 +23,11 @@
 // };
 
 export function repeat(fn,n,params){
+    let res = []
     for(var i=0;i<n,i++;){
-        fn(...params);
+        res.push(fn(...params));
     }
+    return res;
 }
 
 /**

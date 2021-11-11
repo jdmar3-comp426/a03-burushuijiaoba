@@ -119,7 +119,7 @@ export const moreStats = {
         else{
             if(cur.hybrid){
                 pre[cur.year].hybrid.city.push(cur.city_mpg);
-                pre[cur.year].hybrid.highway.push(highway_mpg);
+                pre[cur.year].hybrid.highway.push(cur.highway_mpg);
             }
             else{
                 pre[cur.year].notHybrid.city.push(cur.city_mpg);

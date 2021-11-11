@@ -134,5 +134,6 @@ export const moreStats = {
                 value.notHybrid.highway = getSum(value.notHybrid.highway)/value.notHybrid.highway.length;
             }
         }
+        return pre;
     },{})
 };

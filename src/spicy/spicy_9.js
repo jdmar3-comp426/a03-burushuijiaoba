@@ -32,7 +32,7 @@ export function repeat(fn,n,params){
  * Use the repeat function to log the string "Hello, world!" to the console
  *   10 times.
  */
-export function repeatDemo(){repeat(console.log,10,"Hello, world!")};
+export function repeatDemo(){repeat(console.log,10,"Hello, world!")}
 
 
 /**************************************************************************
@@ -62,16 +62,16 @@ export function multiplyBy(num1){
  */
 export function tenTimes(num1){
     return multiplyBy(num1)(10);
-};
+}
 
 
 /**
  * Write and export a function named "tenTimesFifty" which uses the tenTimes
  *   function to multiply 50 by 10 and returns the result.
  */
-export function tenTimesFifty(){
+export const tenTimesFifty = () =>{
     return tenTimes(50);
-};
+}
 
 
 /**************************************************************************
@@ -98,8 +98,14 @@ export function tenTimesFifty(){
  *    everyEven([1, 1, 0, 1, 1], x => x === 1)  <--  returns false
  */
 export const everyEven = (arr, test) => {
-
-};
+    var res = true;
+    for(var i=0;i<arr.length;i++){
+        if(!test(arr[i]) && i%2 == 0){
+            res = false;
+        }
+    }
+    return res;
+}
 
 
 /**
@@ -122,8 +128,14 @@ export const everyEven = (arr, test) => {
  *    someEven([0, 0, 0, 0, 0], x => x === 0)  <--  returns true
  */
 export const someEven = (arr, test) => {
-
-};
+    var res = false;
+    for(var i=0;i<arr.length;i++){
+        if(test(arr[i]) && i%2 == 0){
+            res = true;
+        }
+    }
+    return res;
+}
 
 
 /**

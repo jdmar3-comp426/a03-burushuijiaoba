@@ -14,21 +14,26 @@
  * @return        Returns an array containing the return values obtained
  *                from calling the function
  */
-export const repeat = (fn, n, ...params) => {
-    // let res = []
-    // for(var i=0;i<n,i++;){
-    //     res.push(fn(...params));
-    // }
-    // return res;
-};
+// export const repeat = (fn, n, ...params) => {
+//     // let res = []
+//     // for(var i=0;i<n,i++;){
+//     //     res.push(fn(...params));
+//     // }
+//     // return res;
+// };
 
+export function repeat(fn,n,params){
+    for(var i=0;i<n,i++;){
+        fn(...params);
+    }
+}
 
 /**
  * Use the repeat function to log the string "Hello, world!" to the console
  *   10 times.
  */
 export const repeatDemo = () => {
-    // repeat(console.log(),10,'Hello world!');
+    repeat(console.log(),10,'Hello world!');
 };
 
 
@@ -44,9 +49,13 @@ export const repeatDemo = () => {
  *   parameter "num2". The returned function should calculate and return the
  *   product of num1 and num2.
  */
-export const multiplyBy = (num1) => {
+// export const multiplyBy = (num1) => {
 
-};
+// };
+
+export function multiplyBy(num1){
+
+}
 
 
 /**

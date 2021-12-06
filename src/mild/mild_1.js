@@ -9,7 +9,7 @@
  * see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
  */
 export function sumToString(a, b) {
-
+    return `${a} + ${b} = ${a+b}`; 
 }
 
 
@@ -24,6 +24,11 @@ export function sumToString(a, b) {
  *
  */
 export function getIncreasingArray(startNumber, endNumber) {
+    let arr = [];
+    for(let i = startNumber;i<=endNumber;i++){
+        arr.push(i)
+    }
+    return arr
 
 }
 
@@ -35,6 +40,7 @@ export function getIncreasingArray(startNumber, endNumber) {
  * and https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
  */
 export function maxAndMin(numbers) {
+    return `{ max: ${Math.max(...numbers)}, min: ${Math.min(...numbers)} }`;
 
 }
 
@@ -49,5 +55,14 @@ export function maxAndMin(numbers) {
  *
  */
 export function countArray(array) {
-
+    let res = Object();
+    for(var i = 0; i< array.length; i ++){
+        if(!res[array[i]]){
+            res[array[i]] = 1;
+        }
+        else{
+            res[array[i]] += 1;
+        };
+    }
+    return res;
 }
